@@ -38,7 +38,8 @@ export class InputComponent implements OnInit, OnChanges {
           this.todoForm.get('description')?.setValue(selectedTask.description)
           this.todoForm.get('due')?.setValue(selectedTask.due)
           this.todoForm.get('priority')?.setValue(selectedTask.priority)
-          console.log("HELLO")
+          // console.log("HELLO")
+          this.isEditing = true
         }
       }
   }
@@ -61,6 +62,7 @@ export class InputComponent implements OnInit, OnChanges {
 
   finishEdit(){
     this.editedTask.next(this.todoForm.value as Task)
+    this.isEditing = false
     this.todoForm.reset()
   }
 
