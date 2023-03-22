@@ -1,0 +1,23 @@
+<h1>Tasks</h1>
+
+<div *ngIf="tasks">
+
+    <div *ngFor="let task of tasks; let idx = index">
+        <p>
+            {{task.description}}
+        </p>
+        <p>
+            {{task.priority}}
+        </p>
+        <p>
+            {{task.due}}
+        </p>
+        <button type="button" (click)="editTask(idx)">
+            Edit
+        </button>
+        <button type="button" (click)="removeTask(idx)">
+            Remove
+        </button>
+
+    </div>
+</div>

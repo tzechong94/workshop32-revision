@@ -1,0 +1,43 @@
+<h1>ToDo</h1>
+
+<form [formGroup]="todoForm" (ngSubmit)="addTask()">
+    <table>
+        <tr>
+            <td>
+                Description
+            </td>
+            <td>
+                <input formControlName="description" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Priority
+            </td>
+            <td>
+                <input type="radio" id="high" value="high" formControlName="priority">
+                <label for="high">High</label>
+                <input type="radio" id="medium" formControlName="priority" value="medium">
+                <label for="medium">Medium</label>
+                <input type="radio" formControlName="priority" id="low" value="low">
+                <label for="low">Low</label>
+        </td>
+        </tr>
+        <tr>
+            <td>
+                Due
+            </td>
+            <td>
+                <input formControlName="due" type="date">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button [disabled]="todoForm.invalid" type="submit">Add New</button>
+            </td>
+            <td *ngIf="isEditing">
+                <button  type="button" (click)="finishEdit()">Edit</button>
+            </td>
+        </tr>
+    </table>
+</form>
