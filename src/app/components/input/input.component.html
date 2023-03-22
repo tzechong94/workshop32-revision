@@ -33,10 +33,10 @@
         </tr>
         <tr>
             <td>
-                <button [disabled]="todoForm.invalid" type="submit">Add New</button>
+                <button mat-raised-button color="primary" [disabled]="todoForm.invalid" type="submit">Add New</button>
             </td>
             <td *ngIf="isEditing">
-                <button  type="button" (click)="finishEdit()">Edit</button>
+                <button mat-raised-button color="primary" type="button" (click)="finishEdit()">Edit</button>
             </td>
         </tr>
     </table>
