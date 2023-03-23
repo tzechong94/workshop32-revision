@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { Task } from 'src/app/models';
 
@@ -57,6 +57,7 @@ export class InputComponent implements OnInit, OnChanges {
     console.log("task ", task)
     // this.taskList.push(task)
     this.taskData.next(task)
+    this.isEditing = false
     this.todoForm.reset()
   }
 
